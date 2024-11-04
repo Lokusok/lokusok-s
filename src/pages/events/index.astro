@@ -1,13 +1,53 @@
 ---
+import { getCollection } from "astro:content";
+
 import Layout from "../../layouts/Layout.astro";
+
 import Title from "../../components/Title.astro";
 import Content from "../../components/Content.astro";
+import EventCard from "../../components/EventCard.astro";
+
+import type { Event } from "../../types/events";
+
+const events = (await getCollection("events")) as Event[];
+
+events.sort((ev1, ev2) => {
+    return +new Date(ev2.data.created_at) - +new Date(ev1.data.created_at);
+});
 ---
 
 <Layout>
-  <Content>
-    <Title subtitle="Check out some of the events related to me!">
-      Events
-    </Title>
-  </Content>
+    <Content>
+        <Title subtitle="Check out some of the events related to me!">
+            Events
+        </Title>
+
+        <div class="events-grid">
+            {
+                events.map((event: Event) => (
+                    <EventCard
+                        slug={`/events/${event.slug}`}
+                        title={event.data.title}
+                        description={event.data.description}
+                        createdAt={event.data.created_at}
+                    />
+                ))
+            }
+        </div>
+    </Content>
 </Layout>
+
+<style>
+    .events-grid {
+        margin-top: 80px;
+        gap: 24px;
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    @media (max-width: 1023px) {
+        .events-grid {
+            grid-template-columns: initial;
+        }
+    }
+</style>

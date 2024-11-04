@@ -1,0 +1,46 @@
+---
+import { getEntry } from "astro:content";
+
+import type { Event } from "../../types/events";
+import Layout from "../../layouts/Layout.astro";
+import Content from "../../components/Content.astro";
+
+export async function getStaticPaths() {
+    return [{ params: { slug: "site-started" } }];
+}
+
+const entry = (await getEntry("events", "site-started")) as Event;
+
+const { Content: EntryContent, headings } = await entry.render();
+
+console.log(entry.data.first_title);
+---
+
+<Layout>
+    <Content maxWidth="672px">
+        <h1 class="title">
+            {entry.data.first_title}
+        </h1>
+
+        <p class="subtitle">
+            {`Published on ${entry.data.created_at}`}
+        </p>
+
+        <EntryContent />
+    </Content>
+
+    <style></style>
+</Layout>
+
+<style>
+    .title {
+        font-size: 48px;
+        font-weight: 700;
+    }
+
+    .subtitle {
+        margin-top: 12px;
+        font-size: 16px;
+        font-weight: 400;
+    }
+</style>

@@ -12,28 +12,28 @@ const { hasHomeLink } = Astro.props;
 
 <!doctype html>
 <html lang="ru">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Lokusok</title>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Lokusok</title>
 
-    <link rel="preconnect" href="https://fonts.bunny.net" />
-    <link
-      href="https://fonts.bunny.net/css?family=alexandria:100,200,300,400,500,600"
-      rel="stylesheet"
-    />
+        <link rel="preconnect" href="https://fonts.bunny.net" />
+        <link
+            href="https://fonts.bunny.net/css?family=alexandria:100,200,300,400,500,600"
+            rel="stylesheet"
+        />
 
-    <ViewTransitions />
-  </head>
-  <body>
-    <Header hasHomeLink={hasHomeLink} />
+        <ViewTransitions />
+    </head>
+    <body>
+        <Header hasHomeLink={hasHomeLink} />
 
-    <main>
-      <div class="container">
-        <slot />
-      </div>
-    </main>
+        <main>
+            <div class="container">
+                <slot />
+            </div>
+        </main>
 
-    <Footer />
-  </body>
+        <Footer />
+    </body>
 </html>

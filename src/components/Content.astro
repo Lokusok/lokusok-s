@@ -1,17 +1,20 @@
 ---
 interface Props {
-  spaceTop?: number;
+    spaceTop?: string;
+    maxWidth?: string;
 }
 
-const { spaceTop = 50 } = Astro.props;
+const { spaceTop = "50px", maxWidth } = Astro.props;
 ---
 
 <div class="content">
-  <slot />
+    <slot />
 </div>
 
-<style define:vars={{ spaceTop: `${spaceTop}px` }}>
-  .content {
-    padding-top: var(--spaceTop);
-  }
+<style define:vars={{ spaceTop, maxWidth }}>
+    .content {
+        padding-top: var(--spaceTop);
+        max-width: var(--maxWidth);
+        margin: 0 auto;
+    }
 </style>
