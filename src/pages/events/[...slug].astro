@@ -11,7 +11,7 @@ export async function getStaticPaths() {
 
 const entry = (await getEntry("events", "site-started")) as Event;
 
-const { Content: EntryContent, headings } = await entry.render();
+const { Content: EntryContent } = await entry.render();
 
 console.log(entry.data.first_title);
 ---
