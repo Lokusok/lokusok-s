@@ -1,0 +1,17 @@
+---
+interface Props {
+  spaceTop?: number;
+}
+
+const { spaceTop = 50 } = Astro.props;
+---
+
+<div class="content">
+  <slot />
+</div>
+
+<style define:vars={{ spaceTop: `${spaceTop}px` }}>
+  .content {
+    padding-top: var(--spaceTop);
+  }
+</style>

@@ -1,0 +1,178 @@
+---
+import Layout from "../layouts/Layout.astro";
+
+import Content from "../components/Content.astro";
+import Title from "../components/Title.astro";
+---
+
+<Layout hasHomeLink={false}>
+  <Content>
+    <Title> Lokusok </Title>
+
+    <div class="about">
+      <div class="about__info">
+        <div class="text-wrapper">
+          <p class="text">Lokusok title about here maybe</p>
+          <p class="text">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit modi
+            adipisci optio? Repellat ut fugit amet modi iusto ad adipisci, illo
+            deserunt itaque porro enim quam libero nulla maiores corporis!
+          </p>
+        </div>
+
+        <div class="text-wrapper">
+          <h3 class="text-wrapper__title">Lorem ipsum dolor sit amet.</h3>
+
+          <p class="text">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius
+            magnam, assumenda atque eum amet doloribus adipisci veritatis
+            necessitatibus a eos provident nisi, et dolore animi veniam mollitia
+            vitae minus voluptatibus illum ex doloremque consequatur harum? Nisi
+            ut libero magni dolorem optio sunt perspiciatis repudiandae.
+            Veritatis!
+          </p>
+
+          <p class="text">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident
+            odio illum sit, ex, excepturi placeat sunt est numquam labore
+            assumenda, laborum voluptatibus facilis enim. Consequatur facilis
+            ipsa mollitia consequuntur sit!
+          </p>
+
+          <p class="text">
+            Lorem ipsum dolor sit amet consectetur adipisicing.
+          </p>
+        </div>
+
+        <div class="text-wrapper">
+          <h3 class="text-wrapper__title">Lorem ipsum dolor sit</h3>
+
+          <p class="text">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui quam
+            aliquid voluptatem architecto, deserunt in rem nemo ullam
+            voluptatibus provident fuga doloremque cupiditate hic possimus
+            veniam, harum eius? Tempore non expedita rerum obcaecati repellat
+            eius!
+          </p>
+
+          <p class="text">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti
+            fugiat cumque soluta tempore obcaecati similique cum iusto alias
+            tempora veniam. Reiciendis sit excepturi possimus delectus!
+          </p>
+
+          <p class="text">
+            Lorem ipsum dolor sit amet consectetur adipisicing.
+          </p>
+        </div>
+      </div>
+
+      <div class="person">
+        <div class="person__row">
+          <img
+            class="person__avatar"
+            src="https://placehold.co/256x256"
+            alt="Lokusok"
+          />
+
+          <a href="mailto:lokusok.dev@protonmail.com" class="person__btn"
+            >Let's talk</a
+          >
+        </div>
+      </div>
+    </div>
+  </Content>
+</Layout>
+
+<style>
+  .text {
+    color: rgba(255, 255, 255, 0.8);
+    line-height: 30px;
+    font-weight: 300;
+    font-size: 20px;
+  }
+
+  .text:not(:last-of-type) {
+    margin-bottom: 20px;
+  }
+
+  .about {
+    margin-top: 30px;
+    display: flex;
+    column-gap: 80px;
+    padding-bottom: 80px;
+  }
+
+  .person__avatar {
+    border-bottom-left-radius: 64px;
+    border-bottom-right-radius: 64px;
+    border-bottom-style: solid;
+    border-bottom-width: 1.25px;
+    border-left-color: rgba(255, 255, 255, 0.4);
+    border-left-style: solid;
+    border-left-width: 1.25px;
+    border-right-color: rgba(255, 255, 255, 0.4);
+    border-right-style: solid;
+    border-right-width: 1.25px;
+    border-top-color: rgba(255, 255, 255, 0.4);
+    border-top-left-radius: 64px;
+    border-top-right-radius: 64px;
+    border-top-style: solid;
+    border-top-width: 1.25px;
+  }
+
+  .person__row {
+    display: flex;
+    flex-direction: column;
+    row-gap: 48px;
+    align-items: center;
+    position: sticky;
+    top: 20px;
+  }
+
+  .person__btn {
+    background: rgb(234, 88, 12);
+    color: #fff;
+    font-weight: 400;
+    font-size: 20px;
+    text-decoration: none;
+    padding: 16px 32px;
+    border-radius: 12px;
+    transition: opacity ease 0.15s;
+  }
+
+  .person__btn:hover {
+    opacity: 0.85;
+  }
+
+  .person__btn:active {
+    opacity: 0.75;
+    transition: opacity ease 0.1s;
+  }
+
+  .text-wrapper:not(:last-of-type) {
+    margin-bottom: 40px;
+  }
+
+  .text-wrapper__title {
+    font-size: 30px;
+    font-weight: 500;
+    margin-bottom: 30px;
+    line-height: 36px;
+  }
+
+  @media (max-width: 1048px) {
+    .about {
+      flex-direction: column;
+    }
+
+    .person__avatar {
+      display: none;
+    }
+
+    .person__row {
+      align-items: start;
+      padding-top: 40px;
+    }
+  }
+</style>

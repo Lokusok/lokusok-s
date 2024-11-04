@@ -1,0 +1,39 @@
+---
+import "../styles/reset.css";
+import "../styles/global.css";
+
+import { ViewTransitions } from "astro:transitions";
+
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+
+const { hasHomeLink } = Astro.props;
+---
+
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lokusok</title>
+
+    <link rel="preconnect" href="https://fonts.bunny.net" />
+    <link
+      href="https://fonts.bunny.net/css?family=alexandria:100,200,300,400,500,600"
+      rel="stylesheet"
+    />
+
+    <ViewTransitions />
+  </head>
+  <body>
+    <Header hasHomeLink={hasHomeLink} />
+
+    <main>
+      <div class="container">
+        <slot />
+      </div>
+    </main>
+
+    <Footer />
+  </body>
+</html>

@@ -1,0 +1,110 @@
+---
+const { hasHomeLink = true } = Astro.props;
+---
+
+<div class="header">
+  <div class="container">
+    <div class="header__row">
+      {
+        hasHomeLink ? (
+          <a href="/" class="header__title">
+            Lokusok
+          </a>
+        ) : (
+          <div />
+        )
+      }
+
+      <nav class="header__nav">
+        <ul class="nav-list">
+          <li class="nav-list__item">
+            <a class="nav-list__link" href="/events">Events</a>
+          </li>
+          <li class="nav-list__item">
+            <a
+              class="nav-list__link"
+              href="https://github.com/lokusok"
+              target="_blank">Github</a
+            >
+          </li>
+          <li class="nav-list__item">
+            <a
+              class="nav-list__link nav-list__btn"
+              href="mailto:lokusok.dev@protonmail.com">Hire me</a
+            >
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+<style>
+  .header {
+    padding-top: 24px;
+    padding-bottom: 24px;
+  }
+
+  .header__title {
+    font-weight: 600;
+    font-size: 20px;
+    color: #fff;
+    text-decoration: none;
+    transition: opacity ease 0.15s;
+  }
+
+  .header__title:hover {
+    opacity: 0.8;
+  }
+
+  .header__row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .nav-list {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 8px 0;
+  }
+
+  .nav-list__link {
+    color: #fff;
+    text-decoration: none;
+    transition: opacity ease 0.15s;
+  }
+
+  .nav-list__link:hover {
+    opacity: 0.8;
+  }
+
+  .nav-list__link:active {
+    transition: opacity ease 0.1s;
+    opacity: 0.7;
+  }
+
+  .nav-list__btn {
+    background-color: rgb(234, 88, 12);
+    color: #fff;
+    padding: 16px 24px;
+    border-radius: 12px;
+    display: inline-block;
+  }
+
+  .nav-list__btn:hover {
+    opacity: 0.9;
+  }
+
+  .nav-list__btn:active {
+    transition: opacity ease 0.1s;
+    opacity: 0.8;
+  }
+
+  @media (max-width: 640px) {
+    .header__row {
+      justify-content: center;
+    }
+  }
+</style>
