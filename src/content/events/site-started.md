@@ -1,6 +1,6 @@
 ---
 title: "Lokusok's site has started"
-created_at: "04-10-2024"
+created_at: "04-11-2024"
 description: "Simple website with short information about me as developer has been finally created :)"
 first_title: "... and finally it happened"
 ---
